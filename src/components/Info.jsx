@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Info = ({ data }) => {
     const { name, id, username, email, phone, website, company } = data
     const { street, suite, city, zipcode, geo } = data.address
-    console.log(company.name);
     const [mood, setMood] = useState(false)
 
     return (
@@ -32,27 +31,58 @@ const Info = ({ data }) => {
             </div>
             {
                 mood && <section className='p-8'>
-                    <article className='text-start space-y-4 '>
+                    <article className='text-start '>
                         <p className='font-bold'>Description</p>
-                        <div>
-                            <p>{company.catchPhrase}  {company.bs}</p>
-                        </div>
-                        <div className='grid grid-cols-2'>
-                            <div className=' '>
-                             <p>{company.catchPhrase}</p>
-                             <p>{company.catchPhrase}</p>
-                             <p>{company.catchPhrase}</p>
-                             <p>{company.catchPhrase}</p>
-                             <p>{company.catchPhrase}   </p>
-                                
+                        <p>{company.catchPhrase}  </p>
+
+                        <div className='grid grid-cols-2 '>
+
+                            <div className='space-y-6'>
+                                <p className='font-bold mt-2 '>Contact Person</p>
+
+                                <div>
+                                    <p>{name}</p>
+                                </div>
+                                <div>
+                                    <p className='font-bold'>Designation</p>
+                                    <p>{company.bs}</p>
+                                </div>
+                                <div>
+                                    <p className='font-bold'>Email</p>
+                                    <p>{email}</p>
+                                </div>
+                                <div>
+                                    <p className='font-bold'>Phone</p>
+                                    <p>{phone}</p>
+                                </div>
+
+
                             </div>
-                            <div>
-                               <p> {company.bs}</p>
-                               <p> {company.bs}</p>
-                               <p> {company.bs}</p>
-                               <p> {company.bs}</p>
-                               <p> {company.bs}</p>
-                                
+
+
+
+
+                            <div className='space-y-6'>
+                                <p className='font-bold mt-2 '>Address</p>
+
+                                <div>
+                                    <p className='font-bold'>City</p>
+                                    <p>{city}</p>
+                                </div>
+                                <div>
+                                    <p className='font-bold'>Zipcode</p>
+                                    <p>{zipcode}</p>
+                                </div>
+                                <div>
+                                    <p className='font-semibold'>STREET</p>
+                                    {street}
+                                </div>
+                                <div>
+                                    <p className='font-bold'>Company Website</p>
+                                    <p>{website}</p>
+                                </div>
+
+
                             </div>
                         </div>
                     </article>

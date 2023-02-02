@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { GetData } from '../assets/Utilities';
 import Info from './Info';
-import Components from './Components.css';
+import css from './Components.css';
 import Loading from '../assets/Loading';
 const Dashboard = () => {
     const [DATA, setDATA] = useState(null)
@@ -32,13 +32,10 @@ const Dashboard = () => {
 
                 {
                     DATA &&
-
                     [...Array(Math.ceil(DATA.length / 3))].map((_, i) =>
                         <button
-
                             key={i} onClick={() => setPage(i)}
                             className="  btn btn-warning m-2">{++i}
-
                         </button>)
                 }
 

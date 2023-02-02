@@ -6,7 +6,7 @@ const Loading = () => {
       <div className="relative top-[30vh] ">
         <div className="flex flex-col justify-center items-center">
           <div className="w-40  h-40 border-8 border-dashed rounded-full animate-spin border-green-600"></div>
-          <div className="text-7xl text-amber-900">Loading....</div>
+          <div className="text-7xl text-orange-600  ">Loading....</div>
         </div>
       </div>
     </div>
