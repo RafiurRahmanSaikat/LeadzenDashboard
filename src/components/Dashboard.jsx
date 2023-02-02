@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GetData } from '../assets/Utilities';
 import Info from './Info';
 import Components from './Components.css';
+import Loading from '../assets/Loading';
 const Dashboard = () => {
     const [DATA, setDATA] = useState(null)
     const [page, setPage] = useState(1)
@@ -21,7 +22,7 @@ const Dashboard = () => {
             <section>
 
                 {
-                    DATA ? DATA.slice(page * 3 - 3, page * 3).map(items => <Info key={items.id} data={items}></Info>) : <p className='text-9xl text-red-700'>LOADING DATA...</p>
+                    DATA ? DATA.slice(page * 3 - 3, page * 3).map(items => <Info key={items.id} data={items}></Info>) : <Loading></Loading>
                 }
 
 
